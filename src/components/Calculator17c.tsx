@@ -143,55 +143,55 @@ export default function Calculator17c() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
-                    <label className="premium-label">Year</label>
+                    <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Year</label>
                     <input
                       type="number"
                       value={vehicleYear}
                       onChange={(e) => setVehicleYear(e.target.value)}
-                      className="premium-input"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl px-4 py-3 w-full text-white placeholder-slate-500 transition-all"
                       placeholder="2020"
                       min="1900"
                       max={new Date().getFullYear() + 1}
                     />
                   </div>
                   <div>
-                    <label className="premium-label">Make</label>
+                    <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Make</label>
                     <input
                       type="text"
                       value={vehicleMake}
                       onChange={(e) => setVehicleMake(e.target.value)}
-                      className="premium-input"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl px-4 py-3 w-full text-white placeholder-slate-500 transition-all"
                       placeholder="Toyota"
                     />
                   </div>
                   <div>
-                    <label className="premium-label">Model</label>
+                    <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Model</label>
                     <input
                       type="text"
                       value={vehicleModel}
                       onChange={(e) => setVehicleModel(e.target.value)}
-                      className="premium-input"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl px-4 py-3 w-full text-white placeholder-slate-500 transition-all"
                       placeholder="Camry"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="premium-label">Pre-Accident Value</label>
+                  <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Pre-Accident Value</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg font-semibold">$</span>
                     <input
                       type="number"
                       value={baseValue}
                       onChange={(e) => setBaseValue(e.target.value)}
-                      className="premium-input pl-10"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl pl-10 pr-4 py-3 w-full text-white placeholder-slate-500 transition-all"
                       placeholder="25,000"
                     />
                   </div>
                   <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
                     Use{' '}
@@ -206,9 +206,9 @@ export default function Calculator17c() {
                   </div>
                 </div>
 
-                <div className="ad-container mt-8">
-                  <div className="text-sm font-medium mb-1 text-slate-400">Advertisement</div>
-                  <div className="text-xs text-slate-500">[Premium Ad Space]</div>
+                {/* Sponsored Content Ad */}
+                <div className="bg-slate-900 rounded-lg p-4 flex items-center justify-center border border-slate-800 mt-6">
+                  <span className="text-xs text-slate-500 uppercase tracking-widest font-semibold">Sponsored Content</span>
                 </div>
 
                 <button
@@ -232,13 +232,13 @@ export default function Calculator17c() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="md:col-span-2">
-                    <label className="premium-label">Damage Severity</label>
+                    <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Damage Severity</label>
                     <select
                       value={damageMultiplier}
                       onChange={(e) => setDamageMultiplier(parseFloat(e.target.value))}
-                      className="premium-input cursor-pointer"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl px-4 py-3 w-full text-white cursor-pointer transition-all"
                     >
                       {damageOptions.map((option) => (
                         <option key={option.value} value={option.value} className="bg-slate-900">
@@ -256,12 +256,12 @@ export default function Calculator17c() {
                   </div>
 
                   <div>
-                    <label className="premium-label">Current Mileage</label>
+                    <label className="block text-slate-300 text-xs font-semibold mb-2 uppercase tracking-wide">Current Mileage</label>
                     <input
                       type="number"
                       value={mileage}
                       onChange={(e) => setMileage(e.target.value)}
-                      className="premium-input"
+                      className="bg-slate-900/50 border border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 rounded-xl px-4 py-3 w-full text-white placeholder-slate-500 transition-all"
                       placeholder="45,000"
                     />
                   </div>
@@ -276,9 +276,9 @@ export default function Calculator17c() {
                   </div>
                 </div>
 
-                <div className="ad-container mt-8">
-                  <div className="text-sm font-medium mb-1 text-slate-400">Advertisement</div>
-                  <div className="text-xs text-slate-500">[Premium Ad Space]</div>
+                {/* Sponsored Content Ad */}
+                <div className="bg-slate-900 rounded-lg p-4 flex items-center justify-center border border-slate-800 mt-6">
+                  <span className="text-xs text-slate-500 uppercase tracking-widest font-semibold">Sponsored Content</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-6">
@@ -299,7 +299,7 @@ export default function Calculator17c() {
 
                 <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded-r-xl mt-6">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
                     <p className="text-xs text-slate-300 leading-relaxed">
@@ -310,78 +310,79 @@ export default function Calculator17c() {
               </div>
             )}
 
-            {/* Step 3: Results */}
+            {/* Step 3: Results - Financial Dashboard */}
             {step === 3 && result && (
-              <div className="space-y-6 animate-fadeIn">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">📊</span>
-                  <div>
-                    <h2 className="text-2xl font-bold text-white">Your Estimate</h2>
-                    <p className="text-slate-400 text-sm">Based on the 17c formula</p>
+              <div className="space-y-8 animate-fadeIn">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 bg-emerald-500/10 px-4 py-2 rounded-full mb-6">
+                    <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-emerald-400 text-sm font-semibold">Calculation Complete</span>
                   </div>
+                  
+                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-4 font-semibold">Your Estimated Diminished Value</p>
+                  <h2 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-3">
+                    ${result.diminishedValue.toLocaleString()}
+                  </h2>
+                  <p className="text-slate-400 text-sm">
+                    {vehicleYear} {vehicleMake} {vehicleModel}
+                  </p>
                 </div>
 
-                <div className="relative overflow-hidden rounded-2xl p-8 text-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-600/20 blur-2xl"></div>
-                  <div className="relative bg-gradient-to-br from-blue-600/10 to-purple-600/10 backdrop-blur-sm border-2 border-blue-500/30 rounded-2xl p-10">
-                    <p className="text-slate-400 text-xs uppercase tracking-wider mb-3 font-semibold">Estimated Diminished Value</p>
-                    <p className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mb-2">
-                      ${result.diminishedValue.toLocaleString()}
-                    </p>
-                    <p className="text-slate-500 text-sm mt-3">
-                      {vehicleYear} {vehicleMake} {vehicleModel}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-slate-900/40 rounded-xl p-6 border border-slate-700/40">
-                  <h3 className="font-bold text-lg mb-5 text-white flex items-center gap-2">
-                    <span>📋</span> Calculation Breakdown
+                {/* Financial Dashboard Card */}
+                <div className="bg-slate-800/80 backdrop-blur rounded-2xl border border-slate-700 p-8">
+                  <h3 className="font-bold text-lg mb-6 text-white flex items-center gap-3">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                    17c Formula Breakdown
                   </h3>
-                  <div className="space-y-3">
-                    <div className="grid grid-cols-2 gap-4 py-3 border-b border-slate-700/30">
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
                       <span className="text-slate-400 text-sm">Pre-Accident Value</span>
-                      <span className="font-semibold text-white text-right">${result.breakdown.baseValue.toLocaleString()}</span>
+                      <span className="font-semibold text-white text-lg">${result.breakdown.baseValue.toLocaleString()}</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 py-3 border-b border-slate-700/30">
-                      <span className="text-slate-400 text-sm">10% Base Cap</span>
-                      <span className="font-semibold text-white text-right">${result.breakdown.tenPercentCap.toLocaleString()}</span>
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                      <span className="text-slate-400 text-sm">10% Base Loss Cap</span>
+                      <span className="font-semibold text-white text-lg">${result.breakdown.tenPercentCap.toLocaleString()}</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 py-3 border-b border-slate-700/30">
-                      <span className="text-slate-400 text-sm">Damage Factor</span>
-                      <span className="font-semibold text-blue-400 text-right">×{result.breakdown.damageMultiplier}</span>
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                      <span className="text-slate-400 text-sm">Damage Severity Factor</span>
+                      <span className="font-semibold text-blue-400 text-lg">×{result.breakdown.damageMultiplier}</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 py-3 border-b border-slate-700/30">
-                      <span className="text-slate-400 text-sm">Mileage Factor</span>
-                      <span className="font-semibold text-blue-400 text-right">×{result.breakdown.mileageMultiplier}</span>
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                      <span className="text-slate-400 text-sm">Mileage Adjustment Factor</span>
+                      <span className="font-semibold text-blue-400 text-lg">×{result.breakdown.mileageMultiplier}</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 py-4 mt-3 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl px-4">
-                      <span className="font-bold text-white">Final Value</span>
-                      <span className="font-bold text-2xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-right">
+                    <div className="flex justify-between items-center py-5 mt-4 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-xl px-6 border border-green-500/30">
+                      <span className="font-bold text-white text-base">Total Diminished Value</span>
+                      <span className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
                         ${result.diminishedValue.toLocaleString()}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="ad-container">
-                  <div className="text-sm font-medium mb-1 text-slate-400">Advertisement</div>
-                  <div className="text-xs text-slate-500">[Premium Ad Space]</div>
+                {/* Sponsored Content Ad */}
+                <div className="bg-slate-900 rounded-lg p-4 flex items-center justify-center border border-slate-800">
+                  <span className="text-xs text-slate-500 uppercase tracking-widest font-semibold">Sponsored Content</span>
                 </div>
 
-                <div className="relative overflow-hidden rounded-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-green-600/20 blur-xl"></div>
-                  <div className="relative bg-gradient-to-br from-emerald-600/20 to-green-600/20 backdrop-blur-sm border-2 border-emerald-500/40 rounded-2xl p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-emerald-600 rounded-full mb-4">
-                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                {/* Attorney CTA - Pulsing */}
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 p-8 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/50 to-indigo-600/50 animate-pulse"></div>
+                  <div className="relative">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Ready to Claim?</h3>
-                    <p className="text-slate-300 mb-6 max-w-md mx-auto">
-                      Connect with a diminished value attorney who can help you recover this amount.
+                    <h3 className="text-3xl font-bold text-white mb-3">Ready to File Your Claim?</h3>
+                    <p className="text-blue-100 mb-8 max-w-md mx-auto text-lg">
+                      Connect with experienced diminished value attorneys who can help you recover ${result.diminishedValue.toLocaleString()}
                     </p>
-                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-emerald-500/50">
+                    <button className="bg-white text-blue-600 font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105 text-lg">
                       Find an Attorney →
                     </button>
                   </div>
