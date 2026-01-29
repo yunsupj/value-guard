@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100 font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    min-height: 100vh;
+  }
+  
+  * {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .premium-card {
+    @apply bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-slate-700/50 p-8;
+  }
+  
+  .premium-input {
+    @apply bg-slate-900/80 border border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-lg px-4 py-3 w-full text-white placeholder-gray-500 transition-all duration-200;
+  }
+  
+  .premium-label {
+    @apply text-gray-300 text-sm font-semibold mb-2 block tracking-wide;
+  }
+  
+  .premium-button {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105;
+  }
+  
+  .premium-button-secondary {
+    @apply bg-slate-700/50 hover:bg-slate-600/50 text-gray-200 font-semibold py-3 px-8 rounded-lg transition-all duration-200 border border-slate-600;
+  }
+  
+  .ad-container {
+    @apply bg-slate-800/30 backdrop-blur-sm rounded-xl border-2 border-dashed border-slate-600/50 p-6 text-center text-gray-400;
+  }
+}
