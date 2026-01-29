@@ -65,19 +65,19 @@ export default function Calculator17c() {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen py-16 px-4" id="calculator">
       <div className="max-w-2xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl mb-6 shadow-lg shadow-blue-500/40">
-            <span className="text-4xl">💎</span>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl mb-6 shadow-lg shadow-blue-500/40">
+            <span className="text-3xl">💎</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               17c Calculator
             </span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-base max-w-xl mx-auto leading-relaxed">
             Discover your vehicle's diminished value using the industry-standard formula trusted by insurance professionals
           </p>
         </div>
@@ -88,42 +88,47 @@ export default function Calculator17c() {
           <div className="premium-card relative z-10">
             
             {/* Visual Step Indicator */}
-            <div className="step-indicator">
+            <div className="flex items-center justify-between mb-8">
               <div className="flex items-center flex-1">
-                <div className={`step-circle ${step === 1 ? 'active' : step > 1 ? 'completed' : 'inactive'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all ${
+                  step === 1 ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/50' : 
+                  step > 1 ? 'bg-gradient-to-br from-emerald-600 to-emerald-700 text-white' : 
+                  'bg-slate-700/50 text-slate-400 border border-slate-600'
+                }`}>
                   {step > 1 ? '✓' : '1'}
                 </div>
-                <div className="flex-1 px-3">
-                  <div className={`text-xs font-semibold ${step >= 1 ? 'text-slate-300' : 'text-slate-500'}`}>
-                    Vehicle
-                  </div>
-                </div>
+                <span className={`ml-2 text-xs font-semibold ${step >= 1 ? 'text-slate-300' : 'text-slate-500'}`}>
+                  Vehicle
+                </span>
               </div>
               
-              <div className={`step-line ${step > 1 ? 'completed' : 'inactive'}`}></div>
+              <div className={`h-px flex-1 mx-3 ${step > 1 ? 'bg-emerald-600' : 'bg-slate-700'}`}></div>
               
-              <div className="flex items-center flex-1">
-                <div className="flex-1 px-3 text-right">
-                  <div className={`text-xs font-semibold ${step >= 2 ? 'text-slate-300' : 'text-slate-500'}`}>
-                    Damage
-                  </div>
-                </div>
-                <div className={`step-circle ${step === 2 ? 'active' : step > 2 ? 'completed' : 'inactive'}`}>
+              <div className="flex items-center flex-1 justify-center">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all ${
+                  step === 2 ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/50' : 
+                  step > 2 ? 'bg-gradient-to-br from-emerald-600 to-emerald-700 text-white' : 
+                  'bg-slate-700/50 text-slate-400 border border-slate-600'
+                }`}>
                   {step > 2 ? '✓' : '2'}
                 </div>
+                <span className={`ml-2 text-xs font-semibold ${step >= 2 ? 'text-slate-300' : 'text-slate-500'}`}>
+                  Damage
+                </span>
               </div>
               
-              <div className={`step-line ${step > 2 ? 'completed' : 'inactive'}`}></div>
+              <div className={`h-px flex-1 mx-3 ${step > 2 ? 'bg-emerald-600' : 'bg-slate-700'}`}></div>
               
-              <div className="flex items-center flex-1">
-                <div className="flex-1 px-3">
-                  <div className={`text-xs font-semibold ${step >= 3 ? 'text-slate-300' : 'text-slate-500'}`}>
-                    Results
-                  </div>
-                </div>
-                <div className={`step-circle ${step === 3 ? 'active' : 'inactive'}`}>
+              <div className="flex items-center flex-1 justify-end">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all ${
+                  step === 3 ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/50' : 
+                  'bg-slate-700/50 text-slate-400 border border-slate-600'
+                }`}>
                   3
                 </div>
+                <span className={`ml-2 text-xs font-semibold ${step >= 3 ? 'text-slate-300' : 'text-slate-500'}`}>
+                  Results
+                </span>
               </div>
             </div>
 
@@ -131,14 +136,14 @@ export default function Calculator17c() {
             {step === 1 && (
               <div className="space-y-6 animate-fadeIn">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-4xl">🚗</span>
+                  <span className="text-3xl">🚗</span>
                   <div>
                     <h2 className="text-2xl font-bold text-white">Vehicle Information</h2>
                     <p className="text-slate-400 text-sm">Tell us about your vehicle</p>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label className="premium-label">Year</label>
                     <input
@@ -209,7 +214,7 @@ export default function Calculator17c() {
                 <button
                   onClick={() => setStep(2)}
                   disabled={!baseValue || !vehicleYear || !vehicleMake || !vehicleModel}
-                  className="premium-button w-full mt-6"
+                  className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-900/20 w-full transition-all"
                 >
                   Continue to Damage Assessment →
                 </button>
@@ -220,14 +225,14 @@ export default function Calculator17c() {
             {step === 2 && (
               <div className="space-y-6 animate-fadeIn">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-4xl">💥</span>
+                  <span className="text-3xl">💥</span>
                   <div>
                     <h2 className="text-2xl font-bold text-white">Damage Assessment</h2>
                     <p className="text-slate-400 text-sm">Evaluate the extent of damage</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="md:col-span-2">
                     <label className="premium-label">Damage Severity</label>
                     <select
@@ -279,14 +284,14 @@ export default function Calculator17c() {
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <button
                     onClick={() => setStep(1)}
-                    className="premium-button-secondary"
+                    className="bg-transparent border border-slate-600 text-slate-300 hover:bg-slate-800 py-3 px-6 rounded-xl transition-all"
                   >
                     ← Back
                   </button>
                   <button
                     onClick={calculate}
                     disabled={!mileage}
-                    className="premium-button"
+                    className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-900/20 transition-all"
                   >
                     Calculate Value
                   </button>
@@ -309,7 +314,7 @@ export default function Calculator17c() {
             {step === 3 && result && (
               <div className="space-y-6 animate-fadeIn">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-4xl">📊</span>
+                  <span className="text-3xl">📊</span>
                   <div>
                     <h2 className="text-2xl font-bold text-white">Your Estimate</h2>
                     <p className="text-slate-400 text-sm">Based on the 17c formula</p>
@@ -320,7 +325,7 @@ export default function Calculator17c() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-600/20 blur-2xl"></div>
                   <div className="relative bg-gradient-to-br from-blue-600/10 to-purple-600/10 backdrop-blur-sm border-2 border-blue-500/30 rounded-2xl p-10">
                     <p className="text-slate-400 text-xs uppercase tracking-wider mb-3 font-semibold">Estimated Diminished Value</p>
-                    <p className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mb-2">
+                    <p className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mb-2">
                       ${result.diminishedValue.toLocaleString()}
                     </p>
                     <p className="text-slate-500 text-sm mt-3">
@@ -367,8 +372,8 @@ export default function Calculator17c() {
                 <div className="relative overflow-hidden rounded-2xl">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-green-600/20 blur-xl"></div>
                   <div className="relative bg-gradient-to-br from-emerald-600/20 to-green-600/20 backdrop-blur-sm border-2 border-emerald-500/40 rounded-2xl p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full mb-4">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-emerald-600 rounded-full mb-4">
+                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -376,7 +381,7 @@ export default function Calculator17c() {
                     <p className="text-slate-300 mb-6 max-w-md mx-auto">
                       Connect with a diminished value attorney who can help you recover this amount.
                     </p>
-                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-emerald-500/50 transform hover:scale-105">
+                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-emerald-500/50">
                       Find an Attorney →
                     </button>
                   </div>
@@ -392,7 +397,7 @@ export default function Calculator17c() {
                     setVehicleModel('');
                     setMileage('');
                   }}
-                  className="premium-button-secondary w-full"
+                  className="bg-transparent border border-slate-600 text-slate-300 hover:bg-slate-800 py-3 px-6 rounded-xl w-full transition-all"
                 >
                   ← Calculate Another Vehicle
                 </button>
@@ -402,7 +407,7 @@ export default function Calculator17c() {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <div className="flex items-center justify-center gap-8 flex-wrap text-sm">
             <div className="flex items-center gap-2 text-slate-500">
               <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">

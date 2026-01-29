@@ -28,21 +28,21 @@ const { title } = Astro.props;
   <body>
     <!-- Header -->
     <header style="backdrop-filter: blur(16px); background: rgba(15, 23, 42, 0.8); border-bottom: 1px solid rgba(51, 65, 85, 0.5); position: sticky; top: 0; z-index: 50;">
-      <div style="max-width: 80rem; margin: 0 auto; padding: 1.25rem 1.5rem;">
+      <div style="max-width: 80rem; margin: 0 auto; padding: 1rem 1.5rem;">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.875rem;">
-            <div style="width: 2.75rem; height: 2.75rem; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);">
-              <span style="font-size: 1.5rem;">💎</span>
+          <a href="/" style="display: flex; align-items: center; gap: 0.875rem; text-decoration: none;">
+            <div style="width: 2.5rem; height: 2.5rem; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);">
+              <span style="font-size: 1.25rem;">💎</span>
             </div>
             <div>
-              <h1 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin: 0;">ValueGuard</h1>
-              <p style="font-size: 0.75rem; color: #94a3b8; margin: 0;">Diminished Value Calculator</p>
+              <h1 style="font-size: 1.125rem; font-weight: 700; color: #ffffff; margin: 0;">ValueGuard</h1>
+              <p style="font-size: 0.7rem; color: #94a3b8; margin: 0;">Diminished Value Calculator</p>
             </div>
-          </div>
+          </a>
           
-          <nav style="display: none; gap: 2rem; font-size: 0.875rem; font-weight: 500;">
+          <nav style="display: none; gap: 2rem; font-size: 0.875rem; font-weight: 500;" class="md:flex">
+            <a href="/" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Home</a>
             <a href="#calculator" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Calculator</a>
-            <a href="#how-it-works" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">How It Works</a>
             <a href="#faq" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">FAQ</a>
           </nav>
         </div>
@@ -54,6 +54,65 @@ const { title } = Astro.props;
       <slot />
     </main>
 
+    <!-- FAQ Section -->
+    <section id="faq" style="max-width: 56rem; margin: 5rem auto; padding: 0 1.5rem;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">
+          Frequently Asked Questions
+        </h2>
+        <p style="color: #94a3b8; font-size: 1.125rem;">
+          Everything you need to know about diminished value claims
+        </p>
+      </div>
+
+      <div style="display: grid; gap: 1.5rem;">
+        <div style="background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1rem; padding: 2rem;">
+          <h3 style="color: #ffffff; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.75rem;">
+            What is diminished value?
+          </h3>
+          <p style="color: #94a3b8; line-height: 1.6; margin: 0;">
+            Diminished value is the difference between your vehicle's market value before an accident and its value after repairs. Even with proper repairs, a vehicle with an accident history is worth less than an identical vehicle with a clean history.
+          </p>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1rem; padding: 2rem;">
+          <h3 style="color: #ffffff; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.75rem;">
+            What is the 17c formula?
+          </h3>
+          <p style="color: #94a3b8; line-height: 1.6; margin: 0;">
+            The 17c formula (also known as the Georgia Diminished Value Formula) is the industry-standard method used by insurance adjusters. It calculates: Base Value × 10% Cap × Damage Multiplier × Mileage Multiplier to determine the diminished value of a vehicle.
+          </p>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1rem; padding: 2rem;">
+          <h3 style="color: #ffffff; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.75rem;">
+            Can I file a diminished value claim?
+          </h3>
+          <p style="color: #94a3b8; line-height: 1.6; margin: 0;">
+            Generally yes, if you're not at fault for the accident. Requirements vary by state, but if another driver's insurance is covering your repairs, you typically have the right to claim diminished value. Consult with a qualified attorney for your specific situation.
+          </p>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1rem; padding: 2rem;">
+          <h3 style="color: #ffffff; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.75rem;">
+            How accurate is this calculator?
+          </h3>
+          <p style="color: #94a3b8; line-height: 1.6; margin: 0;">
+            This calculator uses the same 17c formula used by insurance adjusters nationwide. However, actual diminished value can vary based on market conditions, repair quality, and other factors. For a formal appraisal, consult a certified vehicle appraiser or attorney.
+          </p>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 1rem; padding: 2rem;">
+          <h3 style="color: #ffffff; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.75rem;">
+            Do I need a lawyer?
+          </h3>
+          <p style="color: #94a3b8; line-height: 1.6; margin: 0;">
+            While not always required, an attorney experienced in diminished value claims can significantly increase your settlement. They understand negotiation tactics and can ensure you receive fair compensation. Many work on contingency, meaning they only get paid if you win.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer style="border-top: 1px solid rgba(51, 65, 85, 0.5); background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(16px); margin-top: 5rem;">
       <div style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">
@@ -61,13 +120,13 @@ const { title } = Astro.props;
           <!-- Brand -->
           <div style="grid-column: span 2;">
             <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.25rem;">
-              <div style="width: 2.75rem; height: 2.75rem; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);">
-                <span style="font-size: 1.5rem;">💎</span>
+              <div style="width: 2.5rem; height: 2.5rem; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);">
+                <span style="font-size: 1.25rem;">💎</span>
               </div>
-              <span style="font-size: 1.25rem; font-weight: 700; color: #ffffff;">ValueGuard</span>
+              <span style="font-size: 1.125rem; font-weight: 700; color: #ffffff;">ValueGuard</span>
             </div>
             <p style="color: #94a3b8; font-size: 0.875rem; max-width: 28rem; line-height: 1.6; margin: 0;">
-              Empowering car owners to fight for fair insurance payouts using the industry-standard 17c Formula and data-driven calculations.
+              Empowering car owners to fight for fair insurance payouts using the industry-standard 17c Formula.
             </p>
           </div>
 
@@ -77,8 +136,8 @@ const { title } = Astro.props;
             <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.625rem;">
               <li><a href="https://www.kbb.com" target="_blank" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">Kelley Blue Book</a></li>
               <li><a href="https://www.nada.com" target="_blank" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">NADA Guides</a></li>
-              <li><a href="#" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">17c Formula Guide</a></li>
-              <li><a href="#" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">FAQ</a></li>
+              <li><a href="#calculator" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">Calculator</a></li>
+              <li><a href="#faq" style="color: #94a3b8; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;">FAQ</a></li>
             </ul>
           </div>
 
@@ -99,15 +158,15 @@ const { title } = Astro.props;
             <p style="color: #64748b; font-size: 0.875rem; margin: 0;">
               © 2026 ValueGuard. Built for consumer rights.
             </p>
-            <div style="display: flex; align-items: center; gap: 2rem; font-size: 0.875rem; color: #64748b;">
+            <div style="display: flex; align-items: center; gap: 2rem; font-size: 0.875rem; color: #64748b; flex-wrap: wrap; justify-content: center;">
               <span style="display: flex; align-items: center; gap: 0.5rem;">
-                <svg style="width: 1.125rem; height: 1.125rem; color: #10b981;" fill="currentColor" viewBox="0 0 20 20">
+                <svg style="width: 1rem; height: 1rem; color: #10b981;" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
                 No data stored
               </span>
               <span style="display: flex; align-items: center; gap: 0.5rem;">
-                <svg style="width: 1.125rem; height: 1.125rem; color: #3b82f6;" fill="currentColor" viewBox="0 0 20 20">
+                <svg style="width: 1rem; height: 1rem; color: #3b82f6;" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                 </svg>
                 100% Free
@@ -120,7 +179,7 @@ const { title } = Astro.props;
 
     <style>
       @media (min-width: 768px) {
-        nav {
+        .md\:flex {
           display: flex !important;
         }
       }
